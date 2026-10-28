@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: "Atlas News / SourceHub",
+    category: "AI & Media Aggregation",
+    status: "Active Development",
+    description: "Intelligent news aggregation and discussion platform featuring algorithmic source tracking, AI sentiment analysis, and curated cross-channel feeds.",
+    tag: "Mobile & Web",
+    metric: "Live RSS Feeds"
+  },
+  {
+    title: "CoreProfit",
+    category: "E-Commerce SaaS",
+    status: "Live Beta",
+    description: "Automated real-time financial tracking and net profit analysis engine built for multi-channel merchant operations.",
+    tag: "Shopify Ecosystem",
+    metric: "Financial Ops"
+  },
+  {
+    title: "Inventory Purge",
+    category: "Merchant Automation",
+    status: "Production",
+    description: "Automated SKU lifecycle manager and dead-stock clearance engine enabling merchants to systematically recover tied-up inventory capital.",
+    tag: "SaaS App",
+    metric: "Automated Workflows"
+  },
+  {
+    title: "Smart Grocery AI",
+    category: "Mobile Utilities",
+    status: "In Development",
+    description: "AI-assisted recipe-to-cart compiler and route-optimized in-store mobile assistant connecting shoppers to live inventory.",
+    tag: "Mobile App",
+    metric: "Gemini AI Driven"
+  },
+  {
+    title: "Gravity Flip & Arcade Engine",
+    category: "Interactive Gaming",
+    status: "Live Titles",
+    description: "Physics-driven arcade games and endless-loop casual titles deployed across web distribution networks and mobile app stores.",
+    tag: "Game Dev",
+    metric: "HTML5 & Mobile"
+  },
+  {
+    title: "SEO Optimization Suite",
+    category: "Automation Tools",
+    status: "Production",
+    description: "Continuous background catalog auditor that automates metadata generation, broken link rectification, and search index optimization.",
+    tag: "Micro-SaaS",
+    metric: "Autonomous Bot"
+  }
+];
+---
+
+<Layout title="Portfolio — Venture Ecosystem">
+  <section class="relative py-24 px-6 max-w-6xl mx-auto">
+    <!-- Ambient Top Glow -->
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-2xl mb-16 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/20 bg-indigo-500/10 text-indigo-400 text-xs font-semibold uppercase tracking-wider">
+        Ventures & Products
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white">Active Studio Ecosystem</h1>
+      <p class="text-neutral-400 text-base leading-relaxed">
+        Autonomous software products, consumer tools, and interactive media built for scale and capital efficiency.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((project) => (
+        <div class="group relative rounded-2xl bg-neutral-900/40 border border-neutral-800/80 p-7 flex flex-col justify-between hover:border-neutral-700/90 hover:bg-neutral-900/70 hover:-translate-y-1.5 transition-all duration-300 shadow-xl shadow-black/40">
+          <div>
+            <div class="flex items-center justify-between text-xs mb-5">
+              <span class="px-2.5 py-1 rounded-md bg-neutral-800/90 border border-neutral-700/50 text-neutral-300 font-mono text-[11px]">
+                {project.tag}
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-indigo-400 font-medium text-xs">
+                <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                {project.status}
+              </span>
+            </div>
+            
+            <h3 class="text-xl font-bold text-white mb-2.5 group-hover:text-indigo-300 transition-colors">
+              {project.title}
+            </h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-6 font-normal">
+              {project.description}
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs">
+            <span class="text-neutral-500 font-medium">{project.category}</span>
+            <span class="text-neutral-400 font-mono text-[11px] bg-neutral-950 px-2 py-0.5 rounded border border-neutral-800">
+              {project.metric}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
